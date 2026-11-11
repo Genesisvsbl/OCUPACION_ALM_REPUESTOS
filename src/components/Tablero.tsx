@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Download, Loader2, Printer, Trash2, Upload, X } from "lucide-react";
+import { ChevronDown, Download, ImageDown, Loader2, Printer, Trash2, Upload, X } from "lucide-react";
 import { del, get, set } from "idb-keyval";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Toaster, toast } from "sonner";
@@ -13,6 +13,7 @@ import { Kpis, TablaDetalle, Zonas } from "./Paneles";
 import { AbcZona, ItemsPorPosicion, MapaZonas, OcupadasLibres, PorPrefijo } from "./Graficas";
 import Detalle from "./Detalle";
 import Revision from "./Revision";
+import ReporteImagen from "./ReporteImagen";
 import { Confirmar } from "./piezas";
 
 const CLAVE = "almacen-repuestos:base:v2";
@@ -49,6 +50,7 @@ export default function Tablero() {
   const [exportando, setExportando] = useState(false);
   const [sobre, setSobre] = useState(false);
   const [quitar, setQuitar] = useState(false);
+  const [imagen, setImagen] = useState(false);
   const input = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -160,6 +162,9 @@ export default function Tablero() {
         <div className="barra-acciones">
           {base && (
             <>
+              <button className="barra-btn" onClick={() => setImagen(true)} title="Copiar o descargar el informe como imagen">
+                <ImageDown size={16} /><span className="txt">Imagen</span>
+              </button>
               <button className="barra-btn" onClick={exportar} disabled={exportando} title="Descargar reporte en Excel">
                 {exportando ? <Loader2 size={16} className="girar" /> : <Download size={16} />}<span className="txt">Exportar</span>
               </button>
@@ -265,6 +270,7 @@ export default function Tablero() {
         <div className="soltar" aria-hidden><Upload size={28} />Suelta el Excel para actualizar el tablero</div>
       )}
       {detSel && v && <Detalle v={v} d={detSel} onCerrar={cerrar} />}
+      {imagen && base && v && vBase && <ReporteImagen b={base} v={v} revision={vBase} filtros={textoFiltros()} onCerrar={() => setImagen(false)} />}
       {quitar && (
         <Confirmar
           titulo="¿Quitar el archivo?"
