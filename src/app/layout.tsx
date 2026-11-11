@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Tablero de ocupación del almacén de repuestos: capacidad, posiciones ocupadas, zonas y direcciones críticas.",
 };
 
-export const viewport: Viewport = { themeColor: "#0b1f3b", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#ffffff", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
