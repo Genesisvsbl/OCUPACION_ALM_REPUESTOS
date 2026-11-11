@@ -37,7 +37,7 @@ button { cursor: pointer; }
 
 /* ---------------------------------------------------------- barra */
 .barra { position: sticky; top: 0; z-index: 30; height: var(--alto-barra); background: var(--marino); color: #fff; display: flex; align-items: stretch; border-bottom: 3px solid var(--azul); }
-.barra-logo { width: 38px; height: 38px; margin: 10px 0 0 20px; border: 2px solid #fff; display: grid; place-items: center; font-weight: 800; font-size: 16px; flex: none; }
+.barra-logo { width: 38px; height: 38px; margin: 10px 0 0 20px; border: 2px solid var(--marino); display: grid; place-items: center; font-weight: 800; font-size: 16px; flex: none; }
 .barra-titulo { display: flex; align-items: center; gap: 14px; padding: 0 18px; min-width: 0; flex: 1 1 auto; overflow: hidden; }
 .barra-titulo b { font-size: 15px; font-weight: 700; font-stretch: 115%; letter-spacing: .03em; white-space: nowrap; }
 .barra-titulo > span { color: #9cb3d6; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -45,7 +45,7 @@ button { cursor: pointer; }
 .barra-acciones { display: flex; flex: none; }
 .barra-btn { display: inline-flex; align-items: center; gap: 8px; padding: 0 18px; background: transparent; border: 0; border-left: 1px solid var(--marino-3); color: #fff; font-weight: 600; font-size: 12.5px; white-space: nowrap; }
 .barra-btn:hover { background: var(--marino-2); }
-.barra-btn.primario { background: var(--azul); border-left-color: var(--azul); }
+.barra-btn.primario { background: var(--azul); border-left-color: var(--azul); color: #fff; }
 .barra-btn.primario:hover { background: var(--azul-2); }
 .barra-btn:disabled { opacity: .55; cursor: progress; }
 
@@ -303,7 +303,7 @@ table.t { width: 100%; border-collapse: collapse; }
 .ri-centro { width: 1200px; margin: 0 auto; }
 .ri-lienzo { width: 1200px; margin: 0; background: #fff; font-family: var(--f-ui); color: var(--tinta); }
 .ri-cab { background: var(--marino); color: #fff; padding: 22px 30px; display: flex; gap: 18px; align-items: center; border-bottom: 4px solid var(--azul); }
-.ri-logo { width: 48px; height: 48px; border: 3px solid #fff; display: grid; place-items: center; font-weight: 800; font-size: 22px; flex: none; }
+.ri-logo { width: 54px; height: 54px; border: 3px solid var(--marino); display: grid; place-items: center; font-weight: 800; font-size: 22px; flex: none; }
 .ri-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .12em; color: var(--azul-claro); }
 .ri-titulo { font-size: 30px; font-weight: 800; font-stretch: 112%; line-height: 1.1; margin-top: 2px; }
 .ri-sub { font-size: 13px; color: #c7d5ea; margin-top: 4px; }
@@ -346,5 +346,7 @@ table.t { width: 100%; border-collapse: collapse; }
 .ri-conc p b { color: var(--marino); }
 .ri-conc small { font-size: 11.5px; color: var(--tinta-3); line-height: 1.5; display: block; }
 @media (max-width: 860px) { .ri-ventana { inset: 0; } .ri-scroll { padding: 8px; } }
-.con-img { border: 0 !important; background: transparent; padding: 0; }
+.con-img { border: 0 !important; background: #fff; }
+.barra-logo.con-img { width: 62px; height: var(--alto-barra); margin: 0; padding: 7px 10px; }
+.ri-logo.con-img { width: 74px; height: 74px; padding: 8px; }
 .con-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
