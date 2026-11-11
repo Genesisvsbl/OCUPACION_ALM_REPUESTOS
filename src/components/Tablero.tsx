@@ -14,6 +14,7 @@ import { AbcZona, ItemsPorPosicion, MapaZonas, OcupadasLibres, PorPrefijo } from
 import Detalle from "./Detalle";
 import Revision from "./Revision";
 import ReporteImagen from "./ReporteImagen";
+import Logo from "./Logo";
 import { Confirmar } from "./piezas";
 
 const CLAVE = "almacen-repuestos:base:v2";
@@ -153,7 +154,7 @@ export default function Tablero() {
   return (
     <>
       <header className="barra">
-        <div className="barra-logo" aria-hidden>R</div>
+        <Logo clase="barra-logo" />
         <div className="barra-titulo">
           <b><span className="t-larga">ALMACÉN DE </span>REPUESTOS</b>
           <span>Índice de ocupación{base ? ` · existencias al ${base.fecha ?? "—"} · ${base.archivo}` : ""}</span>

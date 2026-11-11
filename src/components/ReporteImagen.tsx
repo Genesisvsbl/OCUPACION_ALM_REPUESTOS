@@ -4,6 +4,7 @@ import { Check, Copy, Download, Loader2, Share2, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { Base, Vista } from "@/lib/motor";
 import { ABC_COLOR, ESTADO_INFO, fInt, fPct } from "@/lib/formato";
+import Logo from "./Logo";
 
 type Pestana = "todo" | "zonas" | "clases";
 const PESTANAS: { id: Pestana; t: string }[] = [
@@ -18,7 +19,7 @@ const ancho = (r: number | null) => `${Math.min(Math.max(r ?? 0, 0), 1) * 100}%`
 function Cabecera({ b, filtros, titulo }: { b: Base; filtros: string; titulo: string }) {
   return (
     <div className="ri-cab">
-      <div className="ri-logo">R</div>
+      <Logo clase="ri-logo" />
       <div>
         <div className="ri-eyebrow">ALMACÉN DE REPUESTOS · ÍNDICE DE OCUPACIÓN</div>
         <div className="ri-titulo">{titulo}</div>
